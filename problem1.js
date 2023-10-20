@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 const path = require('path');
 
-// Part 1: Implementing with callbacks and asynchronous functions
 function createRandomJSONFilesWithCallbacks(callback) {
 	const directoryPath = path.join(__dirname, 'data');
 	fs.mkdir(directoryPath, (err) => {
@@ -33,7 +31,6 @@ function createRandomJSONFilesWithCallbacks(callback) {
 	});
 }
 
-// Part 2: Implementing with callbacks and promises
 function createRandomJSONFilesWithPromises() {
 	const directoryPath = path.join(__dirname, 'data');
 	return new Promise((resolve, reject) => {
@@ -90,7 +87,6 @@ async function createRandomJSONFilesAsync() {
 
 
 
-// Export all three functions
 module.exports = {
 	createRandomJSONFilesWithCallbacks,
 	createRandomJSONFilesWithPromises,

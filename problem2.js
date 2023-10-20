@@ -74,19 +74,15 @@ async function deleteFilesAsync(filenames) {
   }
 }
 
-// Main function to perform all tasks
+
 async function main() {
   try {
-    // Task 1: Convert to uppercase and write to uppercase.txt
     await processAndWriteToUppercase();
 
-    // Task 2: Split content into sentences and write to separate files
     await splitContentAndWriteToFiles();
 
-    // Task 3: Sort the content and write to sorted.txt
     await sortContentAndWriteToFile();
 
-    // Task 4: Read filenames.txt and delete mentioned files
     const filenamesContent = await readFileAsync('filenames.txt');
     const filenamesToDelete = filenamesContent.split('\n').filter(Boolean);
     await deleteFilesAsync(filenamesToDelete);
